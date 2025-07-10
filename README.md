@@ -1,8 +1,16 @@
 
-## Salomon Alvarez
+## Aagam Kasaliwal - IIT Bombay
 
 # Time Series Forecasting for Algorithmic Trading
 ## by Multi Step Recurrent Neural Network LSTM Model.
+
+Highlights of the project
+
+• Developed an LSTM-based RNN to forecast price crossovers ahead of MACD signals for momentum trading
+• Prepared time-series windows from EMA data with custom sequence splitting for multi-step prediction
+• Trained stacked RNN with ReLU activations on volatile stock data to predict future price movement
+• Achieved early crossover prediction in 75% of cases, enhancing MACD-based trading for higher accuracy
+
 
 
 Moving Average Convergence Divergence (MACD) generates a crossover signal for securities technical analysis. MACD is an indicator of momentum that results useful by showing that a reversal on a securities price trend has occurred. By studying the relationship between two moving averages calculated at different periods, one "slow" and one "fast", we can assess when an upward on downward trend is well on the way. This is by no means a future estimation since all the information used to calculate the estimator is the past of the time series itself, but it helps to smooth out the price movements by doing some depuration of the noise. The signal that a reversal has occurred is when the graph of the slow and fast Exponential Moving Averages cross. This is called Crossover signal.

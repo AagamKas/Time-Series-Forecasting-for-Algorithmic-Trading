@@ -25,42 +25,42 @@ The data used was the closing prices for Devon Energy Company, because of its vo
 
 The following is a plot of the historic prices for Devon Energy and the MACD with short window of 10 days and long window of 40 days. The crossover signals are shown.
 
-![model setup](/images/crossover.png)
+![model setup](crossover.png)
 
 Four signal points from the sequence 4-27-2018 to the present were studied.
 
-![model setup](/images/real1.png)
+![model setup](real1.png)
 
-![model setup](/images/real2.png)
+![model setup](real2.png)
 
-![model setup](/images/real3.png)
+![model setup](real3.png)
 
-![model setup](/images/real4.png)
+![model setup](real4.png)
 
 The model was trained on both the slow and the fast time series. one for the 10 day window and one for the 40 day window sequence. The model is a stacked recurrent neural network. 
 
 To prepare the data fitted on the model first we have to split it, this is done usign the function sequence_split that takes three input values. The whole sequence itself, the number of steps in (for each sub sequence) and the number of steps out or targets. This function returns two arrays, one containing all the sequences n_steps_in long (features) and one containing the sequences n_steps_out long (targets). Then all this time series are passed one by one to the network for training in the form of arrays. The hyper parameters values are: 100 neurons for the first two networks and the last stacked network having n_steps_out neurons, since we want to obtain n_steps_out days of prices in the future. In this case 6. 100 was chosen with trial and error. 100 gave results better than 200 and 10. The activation function used was ReLu because of if effectiveness on most Deep learning algorithms. 
 
-![model setup](/images/model.png)
+![model setup](model.png)
 
 The results obtained are the following:
 
-![model setup](/images/result1df.png)
+![model setup](result1df.png)
 
-![model setup](/images/result2df.png)
+![model setup](result2df.png)
 
-![model setup](/images/result3df.png)
+![model setup](result3df.png)
 
-![model setup](/images/result4df.png)
+![model setup](result4df.png)
 
 Plotting the real crossover signal along with the forecasted crossover signal we can see that in 3 of the 4 studied cases the model predicted a crossover signal before the MACD. 
 
-![model setup](/images/result1plot.png)
+![model setup](result1plot.png)
 
-![model setup](/images/result2plot.png)
+![model setup](result2plot.png)
 
-![model setup](/images/result3plot.png)
+![model setup](result3plot.png)
 
-![model setup](/images/result4plot.png)
+![model setup](result4plot.png)
 
 This results show that there is a possibility that an RNN can be used to refine trend analysis making certain technical indicators more powerful. 
